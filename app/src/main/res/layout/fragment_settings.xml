@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.fragments.settings.SettingsFragment">
+
+    <TextView
+        android:id="@+id/mainTvInHistory"
+        style="@style/mainTvStyle"
+        android:text="@string/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="120dp" />
+
+    <Button
+        android:id="@+id/buttonShare"
+        style="@style/buttonSettings"
+        android:text="@string/share_this_app"
+        app:layout_constraintTop_toBottomOf="@+id/guideline"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonOfUs"
+        style="@style/buttonSettings"
+        android:text="@string/rate_us"
+        app:layout_constraintTop_toBottomOf="@+id/buttonShare"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonLeaveFeedBack"
+        style="@style/buttonSettings"
+        android:text="@string/leave_feedback"
+        app:layout_constraintTop_toBottomOf="@id/buttonOfUs"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonClearHistory"
+        style="@style/buttonSettings"
+        android:text="@string/clear_history"
+        app:layout_constraintTop_toBottomOf="@id/buttonLeaveFeedBack"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
