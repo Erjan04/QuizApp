@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
-        android:text="@string/result"
+        tools:text="@string/result"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -56,11 +56,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/tv_categoryName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="22dp"
-                android:text="@string/mixed"
+                tools:text="@string/mixed"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -115,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/all"
+                    tools:text="@string/all"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="13sp"
@@ -126,14 +127,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/_18"
+                    tools:text="@string/_18"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/resultTvInProcent"
+                    android:id="@+id/resultTvInPercent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -152,6 +153,7 @@
 
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_finish"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginTop="100dp"

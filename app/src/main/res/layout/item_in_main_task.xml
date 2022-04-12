@@ -18,56 +18,56 @@
         app:layout_constraintTop_toBottomOf="@+id/guideline2"
         tools:text="What is the largest city and commerical capital of Sri Lanka ?" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btn_answer1"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_marginHorizontal="52dp"
         android:layout_marginVertical="4dp"
         android:backgroundTint="@color/white"
-        android:text="@string/colombo"
+        tools:text="@string/colombo"
         android:textAllCaps="false"
         android:textColor="@color/purple_700"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="@color/purple_700"
         app:strokeWidth="1dp" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btn_answer2"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_marginHorizontal="52dp"
         android:layout_marginVertical="4dp"
         android:backgroundTint="@color/white"
-        android:text="@string/colombo"
+        tools:text="@string/colombo"
         android:textAllCaps="false"
         android:textColor="@color/purple_700"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="@color/purple_700"
         app:strokeWidth="1dp" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btn_answer3"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_marginHorizontal="52dp"
         android:layout_marginVertical="4dp"
         android:backgroundTint="@color/white"
-        android:text="@string/colombo"
+        tools:text="@string/colombo"
         android:textAllCaps="false"
         android:textColor="@color/purple_700"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="@color/purple_700"
         app:strokeWidth="1dp" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btn_answer4"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_marginHorizontal="52dp"
         android:layout_marginVertical="4dp"
         android:backgroundTint="@color/white"
-        android:text="@string/colombo"
+        tools:text="@string/colombo"
         android:textAllCaps="false"
         android:textColor="@color/purple_700"
         app:layout_constraintTop_toTopOf="parent"

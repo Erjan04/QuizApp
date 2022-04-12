@@ -12,7 +12,7 @@ import com.example.quizapp.domain.entities.QuizEntity
 class QuizAdapter :
     ListAdapter<QuizEntity, QuizAdapter.MultipleViewHolder>(QuizDiffItemCallBack()) {
 
-    val onItemClick: ((QuizEntity) -> Unit)? = null
+    var onItemClick: ((pos: Int, answer: Int) -> Unit)? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -29,7 +29,6 @@ class QuizAdapter :
 
     override fun onBindViewHolder(holder: MultipleViewHolder, position: Int) {
         getItem(position)?.let { holder.onBind(it) }
-        getItem(position)?.let { holder.onItemsClick(it) }
     }
 
     inner class MultipleViewHolder(private val binding: ItemInMainTaskBinding) :
@@ -50,25 +49,33 @@ class QuizAdapter :
             binding.btnAnswer1.text = listQuiz[2]
             binding.btnAnswer1.text = listQuiz[3]
 
-            setBtnColor()
             enabledBtn(true)
+
+            binding.btnAnswer1.setOnClickListener {
+                checkState(it as Button, quiz)
+                enabledBtn(false)
+            }
+            binding.btnAnswer2.setOnClickListener {
+                checkState(it as Button, quiz)
+                enabledBtn(false)
+            }
+            binding.btnAnswer3.setOnClickListener {
+                checkState(it as Button, quiz)
+                enabledBtn(false)
+            }
+            binding.btnAnswer4.setOnClickListener {
+                checkState(it as Button, quiz)
+                enabledBtn(false)
+            }
         }
 
-        private fun setBtnColor() {
-            binding.btnAnswer1.setBackgroundColor(R.drawable.default_answer)
-            binding.btnAnswer2.setBackgroundColor(R.drawable.default_answer)
-            binding.btnAnswer3.setBackgroundColor(R.drawable.default_answer)
-            binding.btnAnswer4.setBackgroundColor(R.drawable.default_answer)
-        }
-
-        private fun responseCheck(button: Button, question: QuizEntity) {
-            button.setBackgroundResource(R.drawable.default_answer)
+        private fun checkState(button: Button, question: QuizEntity) {
             if (button.text == question.correctAnswer) {
                 button.setBackgroundResource(R.drawable.true_answer)
-                onItemClick?.invoke(getItem(absoluteAdapterPosition))
+                onItemClick?.invoke(absoluteAdapterPosition, 1)
             } else {
                 button.setBackgroundResource(R.drawable.false_answer)
-                onItemClick?.invoke(getItem(absoluteAdapterPosition))
+                onItemClick?.invoke(absoluteAdapterPosition, 0)
             }
         }
 
@@ -77,26 +84,6 @@ class QuizAdapter :
             binding.btnAnswer1.isEnabled = boolean
             binding.btnAnswer1.isEnabled = boolean
             binding.btnAnswer1.isEnabled = boolean
-        }
-
-        fun onItemsClick(question: QuizEntity) {
-            binding.btnAnswer1.setOnClickListener { it ->
-                responseCheck(it as Button, question)
-                enabledBtn(false)
-            }
-            binding.btnAnswer2.setOnClickListener { it ->
-
-                responseCheck(it as Button, question)
-                enabledBtn(false)
-            }
-            binding.btnAnswer3.setOnClickListener { it ->
-                responseCheck(it as Button, question)
-                enabledBtn(false)
-            }
-            binding.btnAnswer4.setOnClickListener { it ->
-                responseCheck(it as Button, question)
-                enabledBtn(false)
-            }
         }
     }
 }

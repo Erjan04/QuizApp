@@ -12,14 +12,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
-        <!-- Splash Screen-->
-        <item name="android:windowSplashScreenBackground" tools:ignore="NewApi">@color/white</item>
-        <item name="android:windowSplashScreenAnimatedIcon" tools:ignore="NewApi">
-            @drawable/ic_brain
-        </item>
-        <item name="android:windowSplashScreenBrandingImage" tools:ignore="NewApi">
-            @drawable/ic_brain
-        </item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

@@ -42,14 +42,37 @@
         <argument
             android:name="category_name"
             android:defaultValue=""
-            app:argType="string"/>
+            app:argType="string" />
+        <action
+            android:id="@+id/action_quizFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
 
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.example.quizapp.presentation.ui.fragments.result.ResultFragment"
         android:label="fragment_result"
-        tools:layout="@layout/fragment_result" />
+        tools:layout="@layout/fragment_result">
+
+        <argument
+            android:name="category"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="corAnswer"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="result"
+            android:defaultValue=""
+            app:argType="string" />
+        <action
+            android:id="@+id/action_resultFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.quizapp.presentation.ui.fragments.settings.SettingsFragment"

@@ -23,7 +23,15 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(bottomNav, navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            bottomNav.isVisible = destination.id != R.id.quizFragment
+            bottomNav.isVisible =
+                !(destination.id == R.id.resultFragment || destination.id == R.id.quizFragment)
+
+            if (destination.id == R.id.quizFragment) {
+                supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            } else {
+                supportActionBar?.setDisplayHomeAsUpEnabled(false)
+            }
         }
+
     }
 }
