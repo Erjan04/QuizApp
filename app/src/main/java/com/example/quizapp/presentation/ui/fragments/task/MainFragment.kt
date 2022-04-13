@@ -63,7 +63,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
     }
 
     override fun setupUI() {
-        val list = arrayListOf<Any>("Any Difficulty", "Easy", "Medium", "Hard")
+        val list = arrayListOf("any difficulty", "easy", "medium", "hard")
         binding.difficultySpinner.adapter = setDropSpinner(list)
     }
 }

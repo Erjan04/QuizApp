@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <TextView
@@ -20,51 +21,28 @@
 
 
     <TextView
-        android:id="@+id/tv_answer1"
+        android:id="@+id/tv_true"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="50dp"
         android:background="@drawable/default_answer"
         android:gravity="center"
+        android:text="@string/True"
         android:textColor="@color/purple_700"
-        android:textSize="14sp"
-        tools:text="Colombo 1" />
+        android:textSize="14sp" />
+
 
     <TextView
-        android:id="@+id/tv_answer2"
+        android:id="@+id/tv_false"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="50dp"
-        android:layout_marginVertical="12dp"
+        android:layout_marginVertical="20dp"
         android:background="@drawable/default_answer"
         android:gravity="center"
+        android:text="@string/False"
         android:textColor="@color/purple_700"
-        android:textSize="14sp"
-        tools:text="Colombo 1" />
-
-    <TextView
-        android:id="@+id/tv_answer3"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="50dp"
-        android:background="@drawable/default_answer"
-        android:gravity="center"
-        android:textColor="@color/purple_700"
-        android:textSize="14sp"
-        tools:text="Colombo 1" />
-
-    <TextView
-        android:id="@+id/tv_answer4"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="50dp"
-        android:layout_marginVertical="12dp"
-        android:background="@drawable/default_answer"
-        android:gravity="center"
-        android:textColor="@color/purple_700"
-        android:textSize="14sp"
-        tools:text="Colombo 1" />
-
+        android:textSize="14sp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_skip"

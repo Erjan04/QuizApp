@@ -7,31 +7,28 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.example.quizapp.R
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.quizapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initDest()
+    }
+
+    private fun initDest() {
         navController = Navigation.findNavController(this, R.id.nav_host)
-        NavigationUI.setupWithNavController(bottomNav, navController)
-
+        NavigationUI.setupWithNavController(binding.bottomNav, navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            bottomNav.isVisible =
+            binding.bottomNav.isVisible =
                 !(destination.id == R.id.resultFragment || destination.id == R.id.quizFragment)
-
-            if (destination.id == R.id.quizFragment) {
-                supportActionBar?.setDisplayHomeAsUpEnabled(true)
-            } else {
-                supportActionBar?.setDisplayHomeAsUpEnabled(false)
-            }
         }
-
     }
 }

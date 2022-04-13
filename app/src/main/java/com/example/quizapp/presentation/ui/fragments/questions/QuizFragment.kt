@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.quizapp.common.base.BaseFragment
+import com.example.quizapp.common.extensions.showToast
 import com.example.quizapp.databinding.FragmentQuizBinding
 import com.example.quizapp.presentation.ui.state.UIState
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,8 +26,19 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>() {
     }
 
     override fun setupData() {
-        viewModel.fetchQuiz(args.amount, args.category, args.difficulty)
-        Log.e("TAG", "setupData: ${args.amount},${args.category},${args.difficulty}")
+        if (args.category == -1 && args.difficulty != "any difficulty") {
+            viewModel.fetchQuiz(args.amount, difficulty = args.difficulty)
+            Log.e("quized", "category without:")
+        } else if (args.difficulty == "any difficulty" && args.category != -1) {
+            viewModel.fetchQuiz(args.amount, args.category)
+            Log.e("quized", "difficulty without:")
+        } else if (args.category == -1 && args.difficulty == "any difficulty") {
+            viewModel.fetchQuiz(args.amount)
+            Log.e("quized", "setupData: diff and categ no")
+        } else {
+            viewModel.fetchQuiz(args.amount, args.category, args.difficulty)
+            Log.e("quiezed", "setupData: ${args.amount},${args.category},${args.difficulty}")
+        }
     }
 
     override fun setupListeners() {
@@ -40,13 +52,14 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>() {
                 if (adapter.currentList.size - 1 == pos) {
                     val correctResult = "$correctAnswer/${args.amount}"
                     val resultPercent = (correctAnswer.toDouble() / args.amount.toDouble()) * 100
-                    val result = "${resultPercent.toInt()}"
+                    val result = "${resultPercent.toInt()}%"
 
                     findNavController().navigate(
                         QuizFragmentDirections.actionQuizFragmentToResultFragment(
                             args.categoryName,
                             correctResult,
-                            result
+                            result,
+                            args.difficulty
                         )
                     )
                 } else {
@@ -66,16 +79,14 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>() {
                 binding.progress.isVisible = it is UIState.Loading
                 when (it) {
                     is UIState.Loading -> {
-                        binding.ibBack.isVisible = false
                     }
                     is UIState.Error -> {
                         Log.e("Error", "observeQuiz: ${it.message}")
-                        binding.ibBack.isVisible = false
                     }
                     is UIState.Success -> {
-                        binding.ibBack.isVisible = true
                         binding.tvCategory.text = args.categoryName
                         adapter.submitList(it.data)
+                        requireContext().showToast("Success")
                         Log.e("Success", "observeQuiz: ${it.data}")
                     }
                 }
@@ -89,9 +100,6 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>() {
                 override fun canScrollHorizontally() = false
             }
             adapter = this@QuizFragment.adapter
-        }
-        binding.ibBack.setOnClickListener {
-            findNavController().navigateUp()
         }
     }
 

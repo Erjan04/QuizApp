@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
-        tools:text="@string/result"
+        android:text="@string/result"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -43,29 +43,16 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/categoryTev"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="110dp"
-                android:layout_marginTop="22dp"
-                android:text="@string/categorywithtwopoints"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
                 android:id="@+id/tv_categoryName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="22dp"
                 tools:text="@string/mixed"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/categoryTev"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
@@ -75,7 +62,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="30dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/categoryTev">
+                app:layout_constraintTop_toBottomOf="@+id/tv_categoryName">
 
                 <TextView
                     android:layout_width="wrap_content"

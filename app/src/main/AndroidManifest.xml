@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApp">
         <activity
+            android:name=".presentation.ui.fragments.splash_screen.SplashScreenActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>

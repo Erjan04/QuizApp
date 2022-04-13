@@ -20,6 +20,7 @@ class ResultFragment : BaseFragment<FragmentResultBinding>() {
     }
 
     override fun setupUI() {
+        binding.difficultyTvInResult.text = args.difficultyName
         binding.correctAnswerTvInResult.text = args.corAnswer
         binding.tvCategoryName.text = args.category
         binding.resultTvInPercent.text = args.result

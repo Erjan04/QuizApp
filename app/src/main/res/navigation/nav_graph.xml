@@ -45,7 +45,8 @@
             app:argType="string" />
         <action
             android:id="@+id/action_quizFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/nav_graph" />
 
     </fragment>
     <fragment
@@ -59,6 +60,7 @@
             android:defaultValue=""
             app:argType="string" />
 
+
         <argument
             android:name="corAnswer"
             android:defaultValue=""
@@ -68,9 +70,15 @@
             android:name="result"
             android:defaultValue=""
             app:argType="string" />
+
+        <argument
+            android:name="difficultyName"
+            android:defaultValue=""
+            app:argType="string" />
         <action
             android:id="@+id/action_resultFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/nav_graph" />
 
     </fragment>
     <fragment
