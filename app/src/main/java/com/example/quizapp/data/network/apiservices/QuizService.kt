@@ -12,7 +12,6 @@ interface QuizService {
         @Query("amount") amount: Int?,
         @Query("category") category: Int?,
         @Query("difficulty") difficulty: String?,
-        @Query("type") type: String = "multiple"
     ): Response<QuizResponse>
 
 }
