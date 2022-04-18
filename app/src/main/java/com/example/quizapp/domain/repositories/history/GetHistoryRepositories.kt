@@ -5,6 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface GetHistoryRepositories {
 
-    fun getHistory(): Flow<List<HistoryEntity>>
+    suspend fun getHistory(): Flow<List<HistoryEntity>>
 
 }

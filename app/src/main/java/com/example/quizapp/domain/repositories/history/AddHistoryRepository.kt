@@ -4,6 +4,6 @@ import com.example.quizapp.domain.entities.HistoryEntity
 
 interface AddHistoryRepository {
 
-    fun addHistory(historyEntity: HistoryEntity)
+    suspend fun addHistory(historyEntity: HistoryEntity)
 
 }

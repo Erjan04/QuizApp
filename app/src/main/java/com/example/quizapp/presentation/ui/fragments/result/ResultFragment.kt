@@ -11,7 +11,11 @@ class ResultFragment : BaseFragment<FragmentResultBinding>() {
 
     override fun setupListeners() {
         binding.btnFinish.setOnClickListener {
-            findNavController().navigate(ResultFragmentDirections.actionResultFragmentToMainFragment())
+            findNavController().navigate(
+                ResultFragmentDirections.actionResultFragmentToHistoryFragment(
+                    args.category, args.difficultyName, args.corAnswer
+                )
+            )
         }
     }
 

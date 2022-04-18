@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class AddHistoryUseCase @Inject constructor(private val repository: AddHistoryRepository) {
 
-    fun addHistory(historyEntity: HistoryEntity) {
+    suspend fun addHistory(historyEntity: HistoryEntity) {
         repository.addHistory(historyEntity)
     }
 

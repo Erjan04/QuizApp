@@ -5,7 +5,6 @@ import com.example.quizapp.domain.entities.CategoryEntity
 import com.example.quizapp.domain.usecases.main.GetCategoryUseCase
 import com.example.quizapp.presentation.ui.state.UIState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject

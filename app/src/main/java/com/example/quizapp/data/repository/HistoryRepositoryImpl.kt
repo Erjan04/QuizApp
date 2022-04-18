@@ -12,13 +12,13 @@ class HistoryRepositoryImpl @Inject constructor(private val dao: HistoryDao) :
     GetHistoryRepositories,
     AddHistoryRepository, DeleteHistoryRepository {
 
-    override fun addHistory(historyEntity: HistoryEntity) {
+    override suspend fun addHistory(historyEntity: HistoryEntity) {
         dao.setHistory(historyEntity)
     }
 
-    override fun deleteHistory(historyEntity: HistoryEntity) {
+    override suspend fun deleteHistory(historyEntity: HistoryEntity) {
         dao.deleteHistory(historyEntity)
     }
 
-    override fun getHistory(): Flow<List<HistoryEntity>> = dao.getHistory()
+    override suspend fun getHistory(): Flow<List<HistoryEntity>> = dao.getHistory()
 }

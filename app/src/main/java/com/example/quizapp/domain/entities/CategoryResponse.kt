@@ -10,7 +10,7 @@ data class CategoryResponse(
 data class CategoryEntity(
     val name: String,
     val id: Int,
-){
+) {
     override fun toString(): String {
         return name
     }

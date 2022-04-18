@@ -19,7 +19,24 @@
         android:id="@+id/historyFragment"
         android:name="com.example.quizapp.presentation.ui.fragments.history.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history">
+
+        <argument
+            android:name="category"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="difficulty"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="correctAnswers"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
     <fragment
         android:id="@+id/quizFragment"
         android:name="com.example.quizapp.presentation.ui.fragments.questions.QuizFragment"

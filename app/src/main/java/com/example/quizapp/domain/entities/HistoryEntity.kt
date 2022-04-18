@@ -5,10 +5,10 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class HistoryEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
     val difficulty: String,
     val category: String,
     val correctAnswers: String,
-    val data: String
+    val data: String? = null,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int? = null
 )

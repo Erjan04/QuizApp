@@ -49,7 +49,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun providesQuizService(retrofit: Retrofit): QuizService  {
+    fun providesQuizService(retrofit: Retrofit): QuizService {
         return retrofit.create(QuizService::class.java)
     }
 }

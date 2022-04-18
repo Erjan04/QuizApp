@@ -4,6 +4,6 @@ import com.example.quizapp.domain.entities.HistoryEntity
 
 interface DeleteHistoryRepository {
 
-    fun deleteHistory(historyEntity: HistoryEntity)
+    suspend fun deleteHistory(historyEntity: HistoryEntity)
 
 }

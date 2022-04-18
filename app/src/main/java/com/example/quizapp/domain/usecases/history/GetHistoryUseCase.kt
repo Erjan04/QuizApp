@@ -5,6 +5,6 @@ import javax.inject.Inject
 
 class GetHistoryUseCase @Inject constructor(private val repository: GetHistoryRepositories) {
 
-    operator fun invoke() = repository.getHistory()
+    suspend fun invoke() = repository.getHistory()
 
 }
