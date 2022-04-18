@@ -71,6 +71,11 @@ class QuizAdapter :
             }
             listQuiz.shuffle()
 
+            val count = "${absoluteAdapterPosition + 1}/${currentList.size}"
+            binding.tvProgress.text = count
+            binding.progressLinear.max = currentList.size
+            binding.progressLinear.progress = absoluteAdapterPosition + 1
+
             binding.tvQuestion.text = quiz.question
             binding.tvAnswer1.text = listQuiz[0]
             binding.tvAnswer2.text = listQuiz[1]
@@ -143,6 +148,11 @@ class QuizAdapter :
 
             enabledBtn(true)
             defColor()
+
+            val count = "${absoluteAdapterPosition + 1}/${currentList.size}"
+            binding.tvProgress.text = count
+            binding.progressLinear.max = currentList.size
+            binding.progressLinear.progress = absoluteAdapterPosition + 1
 
             binding.tvQuestion.text = quiz.question
             binding.tvTrue.text = listQuiz[0]
