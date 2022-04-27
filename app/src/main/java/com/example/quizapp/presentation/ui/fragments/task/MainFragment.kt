@@ -1,6 +1,7 @@
 package com.example.quizapp.presentation.ui.fragments.task
 
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -43,6 +44,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
     override fun setupObservers() {
         lifecycleScope.launchWhenCreated {
             viewModel.categoryList.collectLatest {
+                binding.progress.isVisible = it is UIState.Loading
                 when (it) {
                     is UIState.Loading -> {
                     }
